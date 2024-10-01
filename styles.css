@@ -1,4 +1,5 @@
 /* Global Styles */
+/* styles.css */
 body,
 html {
   margin: 0;
@@ -7,7 +8,6 @@ html {
   background-color: #f0f0f0;
 }
 
-/* Dashboard */
 .dashboard {
   display: flex;
   background-color: white;
@@ -18,13 +18,32 @@ html {
   overflow: hidden;
 }
 
-/* Left Panel */
 .left-panel {
   width: 30%;
   padding: 20px;
   background-color: white;
   display: flex;
   flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("search-icon.png");
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 16px;
 }
 
 .weather-icon {
@@ -38,26 +57,31 @@ html {
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 10px;
-  text-align: center;
+  margin-left: 5px;
 }
 
-.date,
-.rain-chance {
+.date {
   margin-bottom: 10px;
   color: #666;
   font-size: 14px;
-  text-align: center;
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
 }
 
 .rain-chance {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  margin-left: 5px;
+  margin-top: 10px;
 }
 
-.rain-icon,
-.cloud-icon {
+.cloud-icon,
+.rain-icon {
   width: 20px;
   height: 20px;
   margin-right: 5px;
@@ -83,12 +107,77 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* Change this to match the text color you want */
-  font-size: 20px; /* Adjust size as needed */
+  color: white;
+  font-size: 20px;
   text-align: center;
-  font-weight: bold; /* Make it bold if needed */
+  font-weight: bold;
 }
 
+.right-panel {
+  width: 70%;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+.unit-toggle {
+  display: flex;
+  gap: 30px;
+  margin-left: 290px;
+}
+
+.unit-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.unit-circle:first-child {
+  background-color: #333; /* Black background for °C */
+  color: white; /* White text for °C */
+}
+
+.unit-circle:last-child {
+  background-color: white; /* White background for °F */
+  color: #333; /* Black text for °F */
+}
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* Right Panel */
 .right-panel {
   width: 70%;
@@ -185,23 +274,9 @@ h4 {
   gap: 10px;
 }
 
-.tab {
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 14px;
-}
-
 .tab.active {
-  background-color: #333;
-  color: white;
-}
-
-.unit-toggle,
-.profile-pic {
-  width: 30px;
-  height: 30px;
-  background-color: #f0f0f0;
-  border-radius: 50%;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
 }
 
 /* Week Forecast */
@@ -218,7 +293,7 @@ h4 {
 
 .day {
   background-color: white;
-  border: 2px solid #ddd;
+
   border-radius: 10px;
   padding: 15px;
   text-align: center;
