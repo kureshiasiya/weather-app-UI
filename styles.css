@@ -35,7 +35,7 @@ html {
 .search-icon {
   width: 20px;
   height: 20px;
-  background-image: url("search\ icon.png");
+  background-image: url("search\ icon.jpg");
   background-size: cover;
   margin-right: 10px;
 }
@@ -45,7 +45,27 @@ html {
   outline: none;
   font-size: 16px;
 }
+.search-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 80%;
+  background-color: #fff;
 
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 40px;
+}
+
+.search-btn img {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
 .weather-icon {
   width: 150px;
   height: 150px;
@@ -169,7 +189,7 @@ html {
 .profile-pic {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 30%;
   overflow: hidden;
 }
 
@@ -287,13 +307,18 @@ h4 {
   border-radius: 10px;
 }
 .yellow-circle {
-  background-color: #ffd700; /* Yellow color */
-  border-radius: 20px;
+  background-color: #ffd700;
+  border-radius: 50%; /* Make it a circle */
+  width: 30px; /* Set the size */
+  height: 30px; /* Set the size */
+  display: flex;
+  justify-content: center;
+
+  margin: 5px 0; /* Add some space between name and temp */
 }
 
 .day {
   background-color: white;
-
   border-radius: 10px;
   padding: 15px;
   text-align: center;
