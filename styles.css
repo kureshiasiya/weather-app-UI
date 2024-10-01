@@ -1,0 +1,280 @@
+/* Global Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  background-color: white;
+  border-radius: 30px;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Panel */
+.left-panel {
+  width: 30%;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-icon {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  object-fit: contain;
+}
+
+.temperature {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.date,
+.rain-chance {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.rain-chance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.rain-icon,
+.cloud-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.location-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Change this to match the text color you want */
+  font-size: 20px; /* Adjust size as needed */
+  text-align: center;
+  font-weight: bold; /* Make it bold if needed */
+}
+
+/* Right Panel */
+.right-panel {
+  width: 70%;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Specific style for UV Index label */
+.index-label {
+  font-size: 18px; /* Example of different font size */
+  color: #f39c12; /* Example of different color */
+  font-weight: bold;
+  text-transform: uppercase; /* Makes the text uppercase */
+}
+
+.uv-index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.gauge-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.gauge {
+  width: 100%;
+  height: 100%;
+  transform: rotate(
+    135deg
+  ); /* Rotate the circle to make it start from the left */
+}
+
+.circle-background {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 2.8;
+}
+
+.circle {
+  fill: none;
+  stroke: #f39c12; /* You can change this to the gradient of colors you want */
+  stroke-width: 2.8;
+  stroke-dasharray: 70, 100; /* Adjust this value based on the percentage */
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease 0s;
+}
+
+.gauge-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.time {
+  position: relative;
+  padding-left: 25px; /* Add space for the circle */
+}
+
+.time::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ffd700;
+  border-radius: 50%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.tab.active {
+  background-color: #333;
+  color: white;
+}
+
+.unit-toggle,
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+/* Week Forecast */
+.week-forecast {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+.yellow-circle {
+  background-color: #ffd700; /* Yellow color */
+  border-radius: 20px;
+}
+
+.day {
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.day:hover {
+  transform: translateY(-5px);
+}
+
+.day-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.day-temp {
+  font-size: 1.5em;
+}
+
+.day-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Highlights Section */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.highlight-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.highlight-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Custom Day Icon */
+.custom-icon {
+  width: 40px;
+  height: 40px;
+}

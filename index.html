@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="left-panel">
+        <div class="search-bar">
+          <div class="search-icon"></div>
+          <input type="text" placeholder="Search for places..." />
+        </div>
+        <img src="whether2.avif" alt="Weather Icon" class="weather-icon" />
+        <div class="temperature">12°C</div>
+        <div class="date">Monday, 16:00</div>
+        <div class="rain-chance">
+          <img src="cloud.jpg" alt="Cloud" class="cloud-icon" />
+          Mostly Cloudy
+        </div>
+        <div class="rain-chance">
+          <img src="rain2.jpg" alt="Rain" class="rain-icon" />
+          Rain - 30%
+        </div>
+        <div class="location-container">
+          <img src="USA.jpg" alt="New York" class="location-image" />
+          <div class="location-text">New York, NY, USA</div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="header">
+          <div class="tabs">
+            <div class="tab">Today</div>\
+            
+            <div class="tab active">Week</div>
+          </div>
+          <div class="unit-toggle"></div>
+          <div class="profile-pic"></div>
+        </div>
+
+        <div class="week-forecast">
+          <div class="day">
+            <div class="day-name">Sun</div>
+            <div class="day-icon yellow-circle"></div>
+            <!-- Yellow circle for Sunday -->
+            <div class="day-temp">15°</div>
+          </div>
+          <div class="day">
+            <div class="day-name">Mon</div>
+            <img
+              src="monday.jpg"
+              alt="Monday Icon"
+              class="day-icon custom-icon"
+            />
+            <div class="day-temp">12°</div>
+          </div>
+          <div class="day">
+            <div class="day-name">Tue</div>
+            <img
+              src="tuesday.jpg"
+              alt="Tuesday Icon"
+              class="day-icon custom-icon"
+            />
+            <div class="day-temp">9°</div>
+          </div>
+          <div class="day">
+            <div class="day-name">Wed</div>
+            <img
+              src="wednessday.jpg"
+              alt="Wednesday Icon"
+              class="day-icon custom-icon"
+            />
+            <div class="day-temp">8°</div>
+          </div>
+          <div class="day">
+            <div class="day-name">Thu</div>
+            <img
+              src="thursday.jpg"
+              alt="Thursday Icon"
+              class="day-icon custom-icon"
+            />
+            <div class="day-temp">5°</div>
+          </div>
+          <div class="day">
+            <div class="day-name">Fri</div>
+            <img
+              src="monday.jpg"
+              alt="Friday Icon"
+              class="day-icon custom-icon"
+            />
+            <div class="day-temp">4°</div>
+          </div>
+          <div class="day">
+            <div class="day-name">Sat</div>
+            <div class="day-icon yellow-circle"></div>
+            <!-- Yellow circle for Sunday -->
+            <div class="day-temp">3°</div>
+          </div>
+        </div>
+
+        <h3>Today's Highlights</h3>
+        <div class="highlights">
+          <div class="highlight-card">
+            <h4 class="index-label">UV Index</h4>
+            <div class="gauge-container">
+              <svg class="gauge" viewBox="0 0 36 36">
+                <path
+                  class="circle-background"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831"
+                />
+              </svg>
+              <div class="gauge-value">5</div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <h4>Wind Status</h4>
+            <div class="highlight-value">7.70 km/h</div>
+            <p>WSW</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Sunrise & Sunset</h4>
+            <p class="time">6:35 AM</p>
+            <p class="time">5:42 PM</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Humidity</h4>
+            <div class="highlight-value">12%</div>
+            <p>Normal 🙂</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Visibility</h4>
+            <div class="highlight-value">5.2 km</div>
+            <p>Average 😐</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Air Quality</h4>
+            <div class="highlight-value">105</div>
+            <p>Unhealthy 😷</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
