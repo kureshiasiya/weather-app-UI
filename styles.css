@@ -374,3 +374,111 @@ h4 {
   width: 40px;
   height: 40px;
 }
+/* Media query for screens smaller than 768px (for tablets and mobile) */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .search-bar {
+    margin-bottom: 15px;
+  }
+
+  .weather-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .temperature {
+    font-size: 48px;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .unit-toggle {
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .unit-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .week-forecast {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .day {
+    margin: 10px 0;
+  }
+
+  .yellow-circle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .day-name {
+    font-size: 1em;
+  }
+
+  .day-temp {
+    font-size: 1.2em;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .highlight-card {
+    padding: 10px;
+  }
+
+  .highlight-value {
+    font-size: 20px;
+  }
+
+  .search-btn {
+    width: 25px;
+    height: 25px;
+  }
+
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .temperature {
+    font-size: 40px;
+  }
+
+  .unit-circle {
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+  }
+
+  .yellow-circle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .day-name,
+  .day-temp {
+    font-size: 1em;
+  }
+}
