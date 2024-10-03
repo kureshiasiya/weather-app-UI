@@ -374,11 +374,13 @@ h4 {
   width: 40px;
   height: 40px;
 }
-/* Media query for screens smaller than 768px (for tablets and mobile) */
+/* Updated Media Queries */
 @media (max-width: 768px) {
   .dashboard {
     flex-direction: column;
     max-width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
 
   .left-panel,
@@ -392,84 +394,106 @@ h4 {
   }
 
   .weather-icon {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .temperature {
-    font-size: 48px;
+    font-size: 42px;
   }
 
   .tabs {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .unit-toggle {
     margin-left: 0;
     gap: 10px;
+    justify-content: center;
+  }
+
+  .unit-circle {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .week-forecast {
+    flex-direction: column;
+    gap: 10px;
+    width: 370px;
+  }
+
+  .day {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .yellow-circle {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px 0 0;
+  }
+
+  .day-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  .day-name {
+    font-size: 0.9em;
+    width: 60px;
+    text-align: left;
+  }
+
+  .day-temp {
+    font-size: 1em;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+
+  .highlight-card {
+    padding: 12px;
+  }
+
+  .highlight-value {
+    font-size: 18px;
+  }
+
+  .search-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .profile-pic {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Additional styles for smaller screens (e.g., Redmi Note 9 in portrait) */
+@media (max-width: 480px) {
+  .dashboard {
+    border-radius: 0;
+  }
+
+  .temperature {
+    font-size: 36px;
   }
 
   .unit-circle {
     width: 30px;
     height: 30px;
     font-size: 12px;
-  }
-
-  .week-forecast {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .day {
-    margin: 10px 0;
-  }
-
-  .yellow-circle {
-    width: 25px;
-    height: 25px;
-  }
-
-  .day-name {
-    font-size: 1em;
-  }
-
-  .day-temp {
-    font-size: 1.2em;
-  }
-
-  .highlights {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .highlight-card {
-    padding: 10px;
-  }
-
-  .highlight-value {
-    font-size: 20px;
-  }
-
-  .search-btn {
-    width: 25px;
-    height: 25px;
-  }
-
-  .profile-pic {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .temperature {
-    font-size: 40px;
-  }
-
-  .unit-circle {
-    width: 25px;
-    height: 25px;
-    font-size: 10px;
   }
 
   .yellow-circle {
@@ -479,6 +503,40 @@ h4 {
 
   .day-name,
   .day-temp {
-    font-size: 1em;
+    font-size: 0.9em;
+  }
+
+  .highlight-card {
+    padding: 10px;
+  }
+
+  .highlight-value {
+    font-size: 16px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+  }
+
+  .location-text {
+    font-size: 16px;
+  }
+  .location-image {
+    width: 370px;
+    border-radius: 10px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .unit-toggle {
+    margin-top: 10px;
+  }
+
+  .profile-pic {
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 }
