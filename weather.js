@@ -5,7 +5,6 @@ async function searchWeather() {
   const city = document.getElementById("cityInput").value || "New York";
 
   try {
-    // First get coordinates
     const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(
       city
     )}&limit=1&appid=${API_KEY}`;
