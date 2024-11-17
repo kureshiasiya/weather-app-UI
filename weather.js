@@ -151,11 +151,28 @@ function updateWeeklyForecast(forecastData) {
   const weekForecast = document.getElementById("weekForecast");
   weekForecast.innerHTML = "";
 
-  const dailyData = forecastData.list
-    .filter((item) => item.dt_txt.includes("12:00:00"))
-    .slice(0, 5);
+  // Get all forecast data points at 12:00:00
+  const dailyData = forecastData.list.filter((item) =>
+    item.dt_txt.includes("12:00:00")
+  );
 
-  dailyData.forEach((day) => {
+  // If we don't have enough data points for 7 days, we'll estimate the remaining days
+  const availableDays = dailyData.slice(0, 7);
+
+  // If we have less than 7 days of data, extrapolate the remaining days
+  while (availableDays.length < 7) {
+    const lastDay = availableDays[availableDays.length - 1];
+    const nextDay = {
+      ...lastDay,
+      dt: lastDay.dt + 86400, // Add 24 hours in seconds
+      dt_txt:
+        new Date(lastDay.dt * 1000 + 86400000).toISOString().split("T")[0] +
+        " 12:00:00",
+    };
+    availableDays.push(nextDay);
+  }
+
+  availableDays.forEach((day) => {
     const date = new Date(day.dt * 1000);
     const dayName = date.toLocaleDateString("en-US", { weekday: "short" });
     const temp = Math.round(day.main.temp);
@@ -164,18 +181,17 @@ function updateWeeklyForecast(forecastData) {
     const dayElement = document.createElement("div");
     dayElement.className = "day";
     dayElement.innerHTML = `
-            <div class="day-name">${dayName}</div>
-            <img src="https://openweathermap.org/img/wn/${iconCode}.png" 
-                 alt="Weather Icon" class="day-icon custom-icon">
-            <div class="day-temp">${temp}°${
+          <div class="day-name">${dayName}</div>
+          <img src="https://openweathermap.org/img/wn/${iconCode}.png" 
+               alt="Weather Icon" class="day-icon custom-icon">
+          <div class="day-temp">${temp}°${
       currentUnit === "metric" ? "C" : "F"
     }</div>
-        `;
+      `;
 
     weekForecast.appendChild(dayElement);
   });
 }
-
 function updateDateTime() {
   const now = new Date();
   document.getElementById("date").textContent = now.toLocaleString("en-US", {
