@@ -58,8 +58,21 @@
             <div class="tab active">Week</div>
           </div>
           <div class="unit-toggle">
-            <div class="unit-circle active" onclick="setUnit('metric')">°C</div>
-            <div class="unit-circle" onclick="setUnit('imperial')">°F</div>
+            <button
+              id="metric"
+              class="unit-circle active"
+              onclick="setUnit('metric')"
+            >
+              °C
+            </button>
+
+            <button
+              id="imperial"
+              class="unit-circle"
+              onclick="setUnit('imperial')"
+            >
+              °F
+            </button>
           </div>
           <div class="profile-pic">
             <img src="profile.avif" alt="Profile Picture" />

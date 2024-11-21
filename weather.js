@@ -2,7 +2,7 @@ const API_KEY = "faaf634317aa5bdcc940d86a16476691";
 let currentUnit = "metric";
 
 async function searchWeather() {
-  const city = document.getElementById("cityInput").value || "New York";
+  const city = document.getElementById("cityInput").value || "Mumbai";
 
   try {
     const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(
@@ -13,17 +13,6 @@ async function searchWeather() {
 
     if (!geoData.length) {
       throw new Error("City not found");
-    }
-
-    // Set unit based on country
-    const countryCode = geoData[0].country;
-    // US uses imperial, most other countries use metric
-    const newUnit = countryCode === "US" ? "imperial" : "metric";
-
-    // Only update if unit changed
-    if (currentUnit !== newUnit) {
-      currentUnit = newUnit;
-      updateUnitCircles();
     }
 
     const { lat, lon } = geoData[0];
@@ -113,7 +102,6 @@ function updateDashboard(data) {
 
     updateWeatherHighlights(data.current);
     updateWeeklyForecast(data.forecast);
-    updateUnitCircles();
   } catch (error) {
     console.error("Error updating dashboard:", error);
   }
@@ -283,20 +271,16 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function updateUnitCircles() {
-  const metricCircle = document.querySelector(".unit-circle:first-child");
-  const imperialCircle = document.querySelector(".unit-circle:last-child");
-
-  if (currentUnit === "metric") {
+function setUnit(unit) {
+  var metricCircle = document.getElementById("metric");
+  var imperialCircle = document.getElementById("imperial");
+  if (unit === "metric") {
     metricCircle.classList.add("active");
     imperialCircle.classList.remove("active");
   } else {
     metricCircle.classList.remove("active");
     imperialCircle.classList.add("active");
   }
-}
-
-function setUnit(unit) {
   if (currentUnit !== unit) {
     currentUnit = unit;
     searchWeather(); // Fetch new data with new unit

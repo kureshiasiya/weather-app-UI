@@ -175,21 +175,18 @@ html {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background-color: white;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
 }
-.unit-circle:first-child {
+.unit-circle.active {
   background-color: #333;
   color: white;
 }
 
-.unit-circle:last-child {
-  background-color: white;
-  color: #333;
-}
 .profile-pic {
   width: 40px;
   height: 40px;
