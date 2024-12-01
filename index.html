@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMdYpUu7+HCpVijK9O3R3+e9aX/aCk5pXl5t8U"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="left-panel">
+        <div class="search-bar">
+          <div class="search-icon"></div>
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Search for places..."
+          />
+
+          <button class="search-btn" onclick="searchWeather()">
+            <img src="search-btn.jpg" alt="search-icon" />
+          </button>
+        </div>
+
+        <img
+          id="weatherIcon"
+          src="whether2.avif"
+          alt="Weather Icon"
+          class="weather-icon"
+        />
+        <div id="temperature" class="temperature">12°C</div>
+        <div id="date" class="date">Monday, 16:00</div>
+        <div class="horizontal-line"></div>
+        <div id="weatherDescription" class="rain-chance">
+          <img src="cloud.jpg" alt="Cloud" class="cloud-icon" />
+          Mostly Cloudy
+        </div>
+        <div id="rainChance" class="rain-chance">
+          <img src="rain2.jpg" alt="Rain" class="rain-icon" />
+          Rain - 30%
+        </div>
+        <div class="location-container">
+          <img src="USA.jpg" alt="Location" class="location-image" />
+          <div id="location" class="location-text">New York, NY, USA</div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="header">
+          <div class="tabs">
+            <div class="tab">Today</div>
+            <div class="tab active">Week</div>
+          </div>
+          <div class="unit-toggle">
+            <button
+              id="metric"
+              class="unit-circle active"
+              onclick="setUnit('metric')"
+            >
+              °C
+            </button>
+
+            <button
+              id="imperial"
+              class="unit-circle"
+              onclick="setUnit('imperial')"
+            >
+              °F
+            </button>
+          </div>
+          <div class="profile-pic">
+            <img src="profile.avif" alt="Profile Picture" />
+          </div>
+        </div>
+
+        <div id="weekForecast" class="week-forecast">
+          <!-- Week forecast will be populated by JavaScript -->
+        </div>
+
+        <h3>Today's Highlights</h3>
+        <div class="highlights">
+          <div class="highlight-card">
+            <h4 class="index-label">UV Index</h4>
+            <div class="gauge-container">
+              <svg class="gauge" viewBox="0 0 36 36">
+                <path
+                  class="circle-background"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  id="uvIndexGauge"
+                  class="circle"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831"
+                />
+              </svg>
+              <div id="uvIndex" class="gauge-value">5</div>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <h4>Wind Status</h4>
+            <div id="windSpeed" class="highlight-value">7.70 km/h</div>
+            <p id="windDirection">WSW</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Sunrise & Sunset</h4>
+            <p id="sunrise" class="time">6:35 AM</p>
+            <p id="sunset" class="time">5:42 PM</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Humidity</h4>
+            <div id="humidity" class="highlight-value">12%</div>
+            <p id="humidityStatus">Normal 🙂</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Visibility</h4>
+            <div id="visibility" class="highlight-value">5.2 km</div>
+            <p id="visibilityStatus">Average 😐</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Air Quality</h4>
+            <div id="airQuality" class="highlight-value">105</div>
+            <p id="airQualityStatus">Unhealthy 😷</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="weather.js"></script>
+  </body>
+</html>
